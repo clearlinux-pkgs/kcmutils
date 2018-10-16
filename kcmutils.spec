@@ -5,21 +5,21 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kcmutils
-Version  : 5.50.0
-Release  : 3
-URL      : https://download.kde.org/stable/frameworks/5.50/kcmutils-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/kcmutils-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/kcmutils-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 4
+URL      : https://download.kde.org/stable/frameworks/5.51/kcmutils-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/kcmutils-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/kcmutils-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: kcmutils-lib
-Requires: kcmutils-license
-Requires: kcmutils-data
-Requires: kcmutils-locales
+Requires: kcmutils-data = %{version}-%{release}
+Requires: kcmutils-lib = %{version}-%{release}
+Requires: kcmutils-license = %{version}-%{release}
+Requires: kcmutils-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 # KCMUtils
@@ -39,9 +39,9 @@ data components for the kcmutils package.
 %package dev
 Summary: dev components for the kcmutils package.
 Group: Development
-Requires: kcmutils-lib
-Requires: kcmutils-data
-Provides: kcmutils-devel
+Requires: kcmutils-lib = %{version}-%{release}
+Requires: kcmutils-data = %{version}-%{release}
+Provides: kcmutils-devel = %{version}-%{release}
 
 %description dev
 dev components for the kcmutils package.
@@ -50,8 +50,8 @@ dev components for the kcmutils package.
 %package lib
 Summary: lib components for the kcmutils package.
 Group: Libraries
-Requires: kcmutils-data
-Requires: kcmutils-license
+Requires: kcmutils-data = %{version}-%{release}
+Requires: kcmutils-license = %{version}-%{release}
 
 %description lib
 lib components for the kcmutils package.
@@ -74,25 +74,25 @@ locales components for the kcmutils package.
 
 
 %prep
-%setup -q -n kcmutils-5.50.0
+%setup -q -n kcmutils-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536430663
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539648946
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536430663
+export SOURCE_DATE_EPOCH=1539648946
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kcmutils
-cp COPYING.LIB %{buildroot}/usr/share/doc/kcmutils/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kcmutils
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kcmutils/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -138,11 +138,11 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KCMUtils.so.5
-/usr/lib64/libKF5KCMUtils.so.5.50.0
+/usr/lib64/libKF5KCMUtils.so.5.51.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kcmutils/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kcmutils/COPYING.LIB
 
 %files locales -f kcmutils5.lang
 %defattr(-,root,root,-)
