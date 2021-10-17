@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kcmutils
-Version  : 5.85.0
-Release  : 36
-URL      : https://download.kde.org/stable/frameworks/5.85/kcmutils-5.85.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.85/kcmutils-5.85.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.85/kcmutils-5.85.0.tar.xz.sig
+Version  : 5.87.0
+Release  : 37
+URL      : https://download.kde.org/stable/frameworks/5.87/kcmutils-5.87.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.87/kcmutils-5.87.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.87/kcmutils-5.87.0.tar.xz.sig
 Summary  : Utilities for interacting with KCModules
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.0
@@ -84,15 +84,15 @@ locales components for the kcmutils package.
 
 
 %prep
-%setup -q -n kcmutils-5.85.0
-cd %{_builddir}/kcmutils-5.85.0
+%setup -q -n kcmutils-5.87.0
+cd %{_builddir}/kcmutils-5.87.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1630959903
+export SOURCE_DATE_EPOCH=1634484105
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -108,17 +108,17 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1630959903
+export SOURCE_DATE_EPOCH=1634484105
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kcmutils
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
-cp %{_builddir}/kcmutils-5.85.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.87.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
 pushd clr-build
 %make_install
 popd
@@ -170,7 +170,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KCMUtils.so.5
-/usr/lib64/libKF5KCMUtils.so.5.85.0
+/usr/lib64/libKF5KCMUtils.so.5.87.0
 
 %files license
 %defattr(0644,root,root,0755)
