@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kcmutils
-Version  : 5.88.0
-Release  : 39
-URL      : https://download.kde.org/stable/frameworks/5.88/kcmutils-5.88.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.88/kcmutils-5.88.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.88/kcmutils-5.88.0.tar.xz.sig
+Version  : 5.89.0
+Release  : 40
+URL      : https://download.kde.org/stable/frameworks/5.89/kcmutils-5.89.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.89/kcmutils-5.89.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.89/kcmutils-5.89.0.tar.xz.sig
 Summary  : Utilities for interacting with KCModules
 Group    : Development/Tools
-License  : GPL-2.0 GPL-3.0 LGPL-2.0
+License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0
 Requires: kcmutils-data = %{version}-%{release}
 Requires: kcmutils-lib = %{version}-%{release}
 Requires: kcmutils-license = %{version}-%{release}
@@ -84,15 +84,15 @@ locales components for the kcmutils package.
 
 
 %prep
-%setup -q -n kcmutils-5.88.0
-cd %{_builddir}/kcmutils-5.88.0
+%setup -q -n kcmutils-5.89.0
+cd %{_builddir}/kcmutils-5.89.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637012176
+export SOURCE_DATE_EPOCH=1639702785
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -108,17 +108,18 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1637012176
+export SOURCE_DATE_EPOCH=1639702785
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kcmutils
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
-cp %{_builddir}/kcmutils-5.88.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kcmutils/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.89.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
 pushd clr-build
 %make_install
 popd
@@ -142,6 +143,7 @@ popd
 /usr/include/KF5/KCMUtils/KCModuleProxy
 /usr/include/KF5/KCMUtils/KCMultiDialog
 /usr/include/KF5/KCMUtils/KPluginSelector
+/usr/include/KF5/KCMUtils/KPluginWidget
 /usr/include/KF5/KCMUtils/kcmodulecontainer.h
 /usr/include/KF5/KCMUtils/kcmoduledata.h
 /usr/include/KF5/KCMUtils/kcmoduleinfo.h
@@ -150,6 +152,7 @@ popd
 /usr/include/KF5/KCMUtils/kcmultidialog.h
 /usr/include/KF5/KCMUtils/kcmutils_export.h
 /usr/include/KF5/KCMUtils/kpluginselector.h
+/usr/include/KF5/KCMUtils/kpluginwidget.h
 /usr/include/KF5/KCMUtils/ksettings/Dialog
 /usr/include/KF5/KCMUtils/ksettings/Dispatcher
 /usr/include/KF5/KCMUtils/ksettings/PluginPage
@@ -170,7 +173,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KCMUtils.so.5
-/usr/lib64/libKF5KCMUtils.so.5.88.0
+/usr/lib64/libKF5KCMUtils.so.5.89.0
 
 %files license
 %defattr(0644,root,root,0755)
@@ -178,6 +181,7 @@ popd
 /usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
 /usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
 /usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+/usr/share/package-licenses/kcmutils/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
 /usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
 
 %files locales -f kcmutils5.lang
