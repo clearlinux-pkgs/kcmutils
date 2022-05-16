@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kcmutils
-Version  : 5.93.0
-Release  : 44
-URL      : https://download.kde.org/stable/frameworks/5.93/kcmutils-5.93.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.93/kcmutils-5.93.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.93/kcmutils-5.93.0.tar.xz.sig
+Version  : 5.94.0
+Release  : 45
+URL      : https://download.kde.org/stable/frameworks/5.94/kcmutils-5.94.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.94/kcmutils-5.94.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.94/kcmutils-5.94.0.tar.xz.sig
 Summary  : Utilities for interacting with KCModules
 Group    : Development/Tools
-License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0
+License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-3.0
 Requires: kcmutils-data = %{version}-%{release}
 Requires: kcmutils-lib = %{version}-%{release}
 Requires: kcmutils-license = %{version}-%{release}
@@ -83,15 +83,15 @@ locales components for the kcmutils package.
 
 
 %prep
-%setup -q -n kcmutils-5.93.0
-cd %{_builddir}/kcmutils-5.93.0
+%setup -q -n kcmutils-5.94.0
+cd %{_builddir}/kcmutils-5.94.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649714434
+export SOURCE_DATE_EPOCH=1652668280
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -107,18 +107,19 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1649714434
+export SOURCE_DATE_EPOCH=1652668280
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kcmutils
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kcmutils/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
-cp %{_builddir}/kcmutils-5.93.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kcmutils/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kcmutils/49e61f7864169f2e356c11a17422d7d20d74b40f
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
+cp %{_builddir}/kcmutils-5.94.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kcmutils/cbca59e0e62dd8bfc0468847678552cadebea0a9
 pushd clr-build
 %make_install
 popd
@@ -159,6 +160,9 @@ popd
 /usr/include/KF5/KCMUtils/ksettings/dialog.h
 /usr/include/KF5/KCMUtils/ksettings/dispatcher.h
 /usr/include/KF5/KCMUtils/ksettings/pluginpage.h
+/usr/include/KF5/KCMUtilsCore/KPluginModel
+/usr/include/KF5/KCMUtilsCore/kcmutilscore_export.h
+/usr/include/KF5/KCMUtilsCore/kpluginmodel.h
 /usr/lib64/cmake/KF5KCMUtils/KF5KCMUtilsConfig.cmake
 /usr/lib64/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake
 /usr/lib64/cmake/KF5KCMUtils/KF5KCMUtilsMacros.cmake
@@ -167,17 +171,26 @@ popd
 /usr/lib64/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.cpp.in
 /usr/lib64/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.h.in
 /usr/lib64/libKF5KCMUtils.so
+/usr/lib64/libKF5KCMUtilsCore.so
 /usr/lib64/qt5/mkspecs/modules/qt_KCMUtils.pri
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KCMUtils.so.5
-/usr/lib64/libKF5KCMUtils.so.5.93.0
+/usr/lib64/libKF5KCMUtils.so.5.94.0
+/usr/lib64/libKF5KCMUtilsCore.so.5
+/usr/lib64/libKF5KCMUtilsCore.so.5.94.0
+/usr/lib64/qt5/qml/org/kde/kcmutils/components/KPluginDelegate.qml
+/usr/lib64/qt5/qml/org/kde/kcmutils/components/KPluginSelector.qml
+/usr/lib64/qt5/qml/org/kde/kcmutils/components/private/AboutPlugin.qml
+/usr/lib64/qt5/qml/org/kde/kcmutils/libkcmutilsqmlplugin.so
+/usr/lib64/qt5/qml/org/kde/kcmutils/qmldir
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kcmutils/20079e8f79713dce80ab09774505773c926afa2a
 /usr/share/package-licenses/kcmutils/2a638514c87c4923c0570c55822620fad56f2a33
+/usr/share/package-licenses/kcmutils/49e61f7864169f2e356c11a17422d7d20d74b40f
 /usr/share/package-licenses/kcmutils/6091db0aead0d90182b93d3c0d09ba93d188f907
 /usr/share/package-licenses/kcmutils/7d9831e05094ce723947d729c2a46a09d6e90275
 /usr/share/package-licenses/kcmutils/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
