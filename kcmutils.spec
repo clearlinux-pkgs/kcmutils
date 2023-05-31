@@ -7,7 +7,7 @@
 #
 Name     : kcmutils
 Version  : 5.106.0
-Release  : 58
+Release  : 59
 URL      : https://download.kde.org/stable/frameworks/5.106/kcmutils-5.106.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.106/kcmutils-5.106.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.106/kcmutils-5.106.0.tar.xz.sig
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684937391
+export SOURCE_DATE_EPOCH=1685564707
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -128,7 +128,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684937391
+export SOURCE_DATE_EPOCH=1685564707
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kcmutils
 cp %{_builddir}/kcmutils-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kcmutils/07c1ab270255cf247438e2358ff0c18835b6a6ce || :
@@ -165,8 +165,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5KCMUtils.so
-/V3/usr/lib64/libKF5KCMUtilsCore.so
 /usr/include/KF5/KCMUtils/KCModuleContainer
 /usr/include/KF5/KCMUtils/KCModuleData
 /usr/include/KF5/KCMUtils/KCModuleInfo
@@ -209,9 +207,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5KCMUtils.so.5
 /V3/usr/lib64/libKF5KCMUtils.so.5.106.0
-/V3/usr/lib64/libKF5KCMUtilsCore.so.5
 /V3/usr/lib64/libKF5KCMUtilsCore.so.5.106.0
 /V3/usr/lib64/qt5/qml/org/kde/kcmutils/libkcmutilsqmlplugin.so
 /usr/lib64/libKF5KCMUtils.so.5
