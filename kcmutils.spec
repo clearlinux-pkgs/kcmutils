@@ -9,7 +9,7 @@
 #
 Name     : kcmutils
 Version  : 6.9.0
-Release  : 85
+Release  : 86
 URL      : https://download.kde.org/stable/frameworks/6.9/kcmutils-6.9.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/6.9/kcmutils-6.9.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/6.9/kcmutils-6.9.0.tar.xz.sig
